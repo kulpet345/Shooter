@@ -7,6 +7,8 @@
 
 std::vector<EnemyBuffer::Enemy> EnemyBuffer::enemy_;
 GLuint EnemyBuffer::shaders_ = 0;
+double EnemyBuffer::next_time_ = 0;
+UniformFloat EnemyBuffer::time_gen_ = UniformFloat(1.5, 3.5, 0);
 
 void EnemyBuffer::load_shaders(){
     shaders_ = LoadShaders("enemy.vertexshader", "enemy.fragmentshader");
@@ -70,4 +72,12 @@ void EnemyBuffer::create_enemy(){
     glGenBuffers(1, &current.cbuf);
     glBindBuffer(GL_ARRAY_BUFFER, current.cbuf);
     glBufferData(GL_ARRAY_BUFFER, sizeof(current.colors), current.colors, GL_STATIC_DRAW);
+}
+
+void EnemyBuffer::try_create(){
+    double t = glfwGetTime();
+    if(t > next_time_){
+        create_enemy();
+        next_time_ += time_gen_();
+    }
 }

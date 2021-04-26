@@ -2,6 +2,7 @@
 #define ENEMY_H_
 
 #include "gen.h"
+#include "random.h"
 
 #include <vector>
 #include <GL/glew.h>
@@ -21,10 +22,13 @@ class EnemyBuffer{
     };
     static std::vector<Enemy> enemy_;
     static GLuint shaders_;
+    static double next_time_;
+    static UniformFloat time_gen_;
 public:
     static void load_shaders();
     static void draw(glm::mat4);
     static void create_enemy();
+    static void try_create();
 };
 
 #endif // ENEMY_H_
