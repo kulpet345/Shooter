@@ -70,6 +70,7 @@ int main( void )
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS); 
     EnemyBuffer::load_shaders();
+
     EnemyBuffer::create_enemy();
     EnemyBuffer::create_enemy();
     EnemyBuffer::create_enemy();
@@ -78,11 +79,14 @@ int main( void )
     EnemyBuffer::create_enemy();
     EnemyBuffer::create_enemy();
     EnemyBuffer::create_enemy();
+
     do{
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         auto MVP = get_matrix(glfwGetTime());
+
+        EnemyBuffer::try_create();
 
         EnemyBuffer::draw(MVP);
 
