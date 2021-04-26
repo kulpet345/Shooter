@@ -4,16 +4,24 @@
 #include <math.h>
 #include <utility>
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+using namespace glm;
+
 Vec get_camera_position(){
-    Vec answer;
+    GLdouble x, y, z;
     int viewport[4]; 
+    GLdouble matModelView[16];
+    GLdouble matProjection[16];
     glGetDoublev( GL_MODELVIEW_MATRIX, matModelView ); 
     glGetDoublev( GL_PROJECTION_MATRIX, matProjection ); 
     glGetIntegerv( GL_VIEWPORT, viewport ); 
     gluUnProject( (viewport[2]-viewport[0])/2 , (viewport[3]-viewport[1])/2, 
     0.0, matModelView, matProjection, viewport,  
-    &answer.x,&answer.y,&answer.z);
-    return answer;
+    &x, &y, &z);
+    return Vec{(float)x, (float)y, (float)z};
 }
 
 Vec get_random_position(float min_dist, float max_dist){
@@ -28,4 +36,8 @@ Vec get_random_position(float min_dist, float max_dist){
     float sinLatitude = sqrt(std::max((float)0, 1 - cosLatitude * cosLatitude));
     float longitude = longitudeGen();
     return Vec{dist * cos(longitude) * sinLatitude, dist * sin(longitude) * sinLatitude, z} + me;
+}
+
+Tetrahedron get_tetrahedron(Vec position){
+    return {position + Vec{0.0f, 0.0f, 1.0f}, position + Vec{0.0f, 0.57735f, 0.0f}, position + Vec{-0.5f, -0.28868f, 0.0f}, position + Vec{0.5f, -0.28868f, 0.0f}};
 }
