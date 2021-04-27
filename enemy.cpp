@@ -51,7 +51,7 @@ void EnemyBuffer::draw(glm::mat4 camera){
 void EnemyBuffer::create_enemy(){
     enemy_.emplace_back();
     Enemy& current = enemy_.back();
-    current.position = get_tetrahedron(get_random_position());
+    current.position = scale_tetrahedron(rand_rotate(get_tetrahedron(get_random_position())));
     memset(current.colors, 0, 36 * sizeof(GLfloat));
     for(int i = 0; i < 36; i += 3)
         current.colors[i] = 1.0f;
