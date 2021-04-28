@@ -24,6 +24,7 @@ class EnemyBuffer{
     static GLuint shaders_;
     static double next_time_;
     static UniformFloat time_gen_;
+    static size_t killed_;
 public:
     static void load_shaders();
     static void draw(glm::mat4);

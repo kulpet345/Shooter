@@ -10,6 +10,7 @@ GLFWwindow* window;
 using namespace glm;
 
 #include "enemy.h"
+#include "text2D.hpp"
 
 inline glm::mat4 get_matrix(double time){
     // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
@@ -30,7 +31,7 @@ inline glm::mat4 get_matrix(double time){
     return MVP;
 }
 
-int main( void )
+int main(int argc, char ** argv)
 {
     // Initialise GLFW
     if( !glfwInit() )
@@ -68,7 +69,9 @@ int main( void )
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS); 
+    glDepthFunc(GL_LESS);
+    
+    initText2D("Holstein.DDS");
     EnemyBuffer::load_shaders();
 
     EnemyBuffer::create_enemy();
@@ -96,6 +99,7 @@ int main( void )
     } while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
            glfwWindowShouldClose(window) == 0 );
 
+    cleanupText2D();
     glfwTerminate();
 
     return 0;
