@@ -1,14 +1,18 @@
 #include "gen.h"
 #include "enemy.h"
 #include "shader.hpp"
+#include "text2D.hpp"
 
 #include <string.h>
+#include <string>
 
+#include <GL/glut.h>
 
 std::vector<EnemyBuffer::Enemy> EnemyBuffer::enemy_;
 GLuint EnemyBuffer::shaders_ = 0;
 double EnemyBuffer::next_time_ = 0;
 UniformFloat EnemyBuffer::time_gen_ = UniformFloat(1.5, 3.5, 0);
+size_t EnemyBuffer::killed_ = 0;
 
 void EnemyBuffer::load_shaders(){
     shaders_ = LoadShaders("enemy.vertexshader", "enemy.fragmentshader");
@@ -46,6 +50,9 @@ void EnemyBuffer::draw(glm::mat4 camera){
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
     }
+
+    std::string msg = "Killed: " + std::to_string(killed_);
+    printText2D(msg.c_str(), 0, 0, 20);
 }
 
 void EnemyBuffer::create_enemy(){

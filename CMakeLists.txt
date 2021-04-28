@@ -20,6 +20,8 @@ add_executable(shooter
     shader.cpp
     enemy.cpp
     gen.cpp
+    text2D.cpp
+    texture.cpp
 
     enemy.vertexshader
     enemy.fragmentshader    
