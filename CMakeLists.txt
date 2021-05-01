@@ -20,6 +20,7 @@ add_executable(shooter
     shader.cpp
     enemy.cpp
     gen.cpp
+    camera.cpp
     text2D.cpp
     texture.cpp
 

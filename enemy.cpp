@@ -59,9 +59,21 @@ void EnemyBuffer::create_enemy(){
     enemy_.emplace_back();
     Enemy& current = enemy_.back();
     current.position = scale_tetrahedron(rand_rotate(get_tetrahedron(get_random_position())));
-    memset(current.colors, 0, 36 * sizeof(GLfloat));
-    for(int i = 0; i < 36; i += 3)
-        current.colors[i] = 1.0f;
+    static const GLfloat base_colors[] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f,
+        1.0f, 0.0f, 0.0f,
+        1.0f, 1.0f, 1.0f,
+        0.0f, 1.0f, 0.0f,
+        1.0f, 0.0f, 0.0f,
+        1.0f, 1.0f, 1.0f,
+        0.0f, 0.0f, 1.0f,
+        0.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, 1.0f,
+        0.0f, 1.0f, 0.0f
+    };
+    memcpy(current.colors, base_colors, sizeof(base_colors));
     GLfloat * ptr = current.vertices;
     for(int exclude = 0; exclude < 4; exclude++){
         for(int i = 0; i < 4; i++){
