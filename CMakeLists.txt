@@ -23,6 +23,10 @@ add_executable(shooter
     camera.cpp
     text2D.cpp
     texture.cpp
+    objloader.cpp
+    bullet_geom.cpp
+    bullet.cpp
+    stb_image.h
 
     enemy.vertexshader
     enemy.fragmentshader    

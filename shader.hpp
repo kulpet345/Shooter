@@ -1,3 +1,6 @@
+#include <GL/glew.h>
+
+
 #ifndef SHADER_HPP
 #define SHADER_HPP
 

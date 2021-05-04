@@ -20,7 +20,7 @@ void EnemyBuffer::load_shaders(){
 
 void EnemyBuffer::draw(glm::mat4 camera){
     glUseProgram(shaders_);
-    for(auto& enemy: enemy_){
+    for(auto& enemy: enemy_) {
         auto matrix = glGetUniformLocation(shaders_, "MVP");
         glm::mat4 MVP;
         memcpy(&MVP, &camera, sizeof(MVP));

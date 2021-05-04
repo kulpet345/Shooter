@@ -12,7 +12,7 @@
 using namespace glm;
 
 class EnemyBuffer{
-    struct Enemy{
+    struct Enemy {
         Tetrahedron position;
         GLfloat vertices[36];
         GLfloat colors[36];
