@@ -30,6 +30,7 @@ public:
     static void draw(glm::mat4);
     static void create_enemy();
     static void try_create();
+    static void check_kills();
 };
 
 #endif // ENEMY_H_

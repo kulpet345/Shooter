@@ -1,12 +1,13 @@
+#include "bullet.h"
 #include "gen.h"
 #include "enemy.h"
+#include "intersection.h"
 #include "shader.hpp"
 #include "text2D.hpp"
 
+#include <algorithm>
 #include <string.h>
 #include <string>
-
-#include <GL/glut.h>
 
 std::vector<EnemyBuffer::Enemy> EnemyBuffer::enemy_;
 GLuint EnemyBuffer::shaders_ = 0;
@@ -99,4 +100,28 @@ void EnemyBuffer::try_create(){
         create_enemy();
         next_time_ += time_gen_();
     }
+}
+
+void EnemyBuffer::check_kills(){
+    size_t ok = 0;
+    for(size_t i = 0; i < enemy_.size(); i++){
+        std::vector<std::vector<double> > me(4);
+        for(size_t k = 0; k < 4; k++){
+            me[k] = {enemy_[i].position[k].x, enemy_[i].position[k].y, enemy_[i].position[k].z};
+        }
+        bool alive = true;
+        for(size_t j = 0; j < Bullets::models.size(); j++){
+            std::vector<double> v = {Bullets::models[j][45].x, Bullets::models[j][45].y, Bullets::models[j][45].z};
+            if(intersect(me, v)){
+                alive = false;
+                break;
+            }
+        }
+        if(alive){
+            enemy_[ok] = enemy_[i];
+            ++ok;
+        }
+    }
+    killed_ += enemy_.size() - ok;
+    enemy_.resize(ok);
 }

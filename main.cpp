@@ -164,6 +164,7 @@ int main(int argc, char ** argv)
         auto MVP = getMVP();
 
         EnemyBuffer::try_create();
+        EnemyBuffer::check_kills();
 
         EnemyBuffer::draw(MVP);
         
