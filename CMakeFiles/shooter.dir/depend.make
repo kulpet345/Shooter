@@ -13,10 +13,14 @@ CMakeFiles/shooter.dir/bullet_geom.cpp.o: bullet_geom.h
 CMakeFiles/shooter.dir/camera.cpp.o: camera.cpp
 CMakeFiles/shooter.dir/camera.cpp.o: camera.h
 
+CMakeFiles/shooter.dir/enemy.cpp.o: bullet.h
+CMakeFiles/shooter.dir/enemy.cpp.o: bullet_geom.h
 CMakeFiles/shooter.dir/enemy.cpp.o: enemy.cpp
 CMakeFiles/shooter.dir/enemy.cpp.o: enemy.h
 CMakeFiles/shooter.dir/enemy.cpp.o: gen.h
 CMakeFiles/shooter.dir/enemy.cpp.o: geometry.h
+CMakeFiles/shooter.dir/enemy.cpp.o: intersection.h
+CMakeFiles/shooter.dir/enemy.cpp.o: objloader.hpp
 CMakeFiles/shooter.dir/enemy.cpp.o: random.h
 CMakeFiles/shooter.dir/enemy.cpp.o: shader.hpp
 CMakeFiles/shooter.dir/enemy.cpp.o: text2D.hpp
@@ -25,6 +29,9 @@ CMakeFiles/shooter.dir/gen.cpp.o: gen.cpp
 CMakeFiles/shooter.dir/gen.cpp.o: gen.h
 CMakeFiles/shooter.dir/gen.cpp.o: geometry.h
 CMakeFiles/shooter.dir/gen.cpp.o: random.h
+
+CMakeFiles/shooter.dir/geometry.cpp.o: geometry.cpp
+CMakeFiles/shooter.dir/geometry.cpp.o: geometry.h
 
 CMakeFiles/shooter.dir/main.cpp.o: bullet.h
 CMakeFiles/shooter.dir/main.cpp.o: bullet_geom.h

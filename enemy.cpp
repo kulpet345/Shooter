@@ -19,7 +19,7 @@ void EnemyBuffer::load_shaders(){
     shaders_ = LoadShaders("enemy.vertexshader", "enemy.fragmentshader");
 }
 
-void EnemyBuffer::draw(glm::mat4 camera){
+void EnemyBuffer::draw(glm::mat4 camera) {
     glUseProgram(shaders_);
     for(auto& enemy: enemy_) {
         auto matrix = glGetUniformLocation(shaders_, "MVP");
@@ -102,7 +102,7 @@ void EnemyBuffer::try_create(){
     }
 }
 
-void EnemyBuffer::check_kills(){
+void EnemyBuffer::check_kills() {
     size_t ok = 0;
     for(size_t i = 0; i < enemy_.size(); i++){
         std::vector<std::vector<double> > me(4);
@@ -110,14 +110,20 @@ void EnemyBuffer::check_kills(){
             me[k] = {enemy_[i].position[k].x, enemy_[i].position[k].y, enemy_[i].position[k].z};
         }
         bool alive = true;
-        for(size_t j = 0; j < Bullets::models.size(); j++){
-            std::vector<double> v = {Bullets::models[j][45].x, Bullets::models[j][45].y, Bullets::models[j][45].z};
-            if(intersect(me, v)){
+        for(size_t j = 0; j < Bullets::models.size(); j++) {
+            //std::vector<double> v = {Bullets::models[j][45].x, Bullets::models[j][45].y, Bullets::models[j][45].z};
+            std::vector<double> v = {(Bullets::models[j][0].x + Bullets::models[j].back().x) / 2,
+				                     (Bullets::models[j][0].y + Bullets::models[j].back().y) / 2,
+				                     (Bullets::models[j][0].z + Bullets::models[j].back().z) / 2};
+            //if(dist(me, v) < 0.0001){
+            if (intersect(enemy_[i].position, v)) {
+				Bullets::exist[j] = false;
                 alive = false;
-                break;
-            }
+			}
+            //    break;
+            //}
         }
-        if(alive){
+        if (alive) {
             enemy_[ok] = enemy_[i];
             ++ok;
         }

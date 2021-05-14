@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kulpet345/Shooter
+CMAKE_SOURCE_DIR = /home/kulpet345/hw5/Shooter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kulpet345/Shooter
+CMAKE_BINARY_DIR = /home/kulpet345/hw5/Shooter
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/Shooter/CMakeFiles /home/kulpet345/Shooter/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/hw5/Shooter/CMakeFiles /home/kulpet345/hw5/Shooter/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/Shooter/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/hw5/Shooter/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -258,6 +258,33 @@ gen.cpp.s:
 	$(MAKE) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/gen.cpp.s
 .PHONY : gen.cpp.s
 
+geometry.o: geometry.cpp.o
+
+.PHONY : geometry.o
+
+# target to build an object file
+geometry.cpp.o:
+	$(MAKE) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/geometry.cpp.o
+.PHONY : geometry.cpp.o
+
+geometry.i: geometry.cpp.i
+
+.PHONY : geometry.i
+
+# target to preprocess a source file
+geometry.cpp.i:
+	$(MAKE) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/geometry.cpp.i
+.PHONY : geometry.cpp.i
+
+geometry.s: geometry.cpp.s
+
+.PHONY : geometry.s
+
+# target to generate assembly for a file
+geometry.cpp.s:
+	$(MAKE) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/geometry.cpp.s
+.PHONY : geometry.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -417,6 +444,9 @@ help:
 	@echo "... gen.o"
 	@echo "... gen.i"
 	@echo "... gen.s"
+	@echo "... geometry.o"
+	@echo "... geometry.i"
+	@echo "... geometry.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

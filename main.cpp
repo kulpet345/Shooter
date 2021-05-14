@@ -24,6 +24,18 @@ using namespace glm;
 #include "enemy.h"
 #include "text2D.hpp"
 
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_Q && action == GLFW_PRESS) {
+		double angle = View::angle;
+        glm::vec3 pos{View::x, View::y, View::z};
+        glm::vec3 dir{-std::cos(angle), 0, -std::sin(angle)};
+        std::pair<glm::vec3, glm::vec3> camera{pos, dir};
+		Bullets::InsertModel(camera);
+	}
+}
+
 int main(int argc, char ** argv)
 {
     // Initialise GLFW
@@ -57,7 +69,7 @@ int main(int argc, char ** argv)
         return -1;
     }
 
-    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+    //glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -164,7 +176,10 @@ int main(int argc, char ** argv)
         auto MVP = getMVP();
 
         EnemyBuffer::try_create();
+        Bullets::CreateExist();
         EnemyBuffer::check_kills();
+        Bullets::Clear();
+        //std::cout << Bullets::models.size() << std::endl;
 
         EnemyBuffer::draw(MVP);
         
@@ -174,17 +189,18 @@ int main(int argc, char ** argv)
         auto finish = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> elapsed = finish - start;
         
-        double angle = View::angle;
-        glm::vec3 pos{View::x, View::y, View::z};
-        glm::vec3 dir{-std::cos(angle), 0, -std::sin(angle)};
+        //double angle = View::angle;
+        //glm::vec3 pos{View::x, View::y, View::z};
+        //glm::vec3 dir{-std::cos(angle), 0, -std::sin(angle)};
         
         Bullets::UpdateModels(elapsed);
         
-        
-        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
-			std::pair<glm::vec3, glm::vec3> camera{pos, dir};
-			Bullets::InsertModel(camera);
-		}
+        glfwSetKeyCallback(window, key_callback);
+        //if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
+        //if (glfwSetKeyCallback(window, key_callback))
+		//	std::pair<glm::vec3, glm::vec3> camera{pos, dir};
+		//	Bullets::InsertModel(camera);
+		//}
 	    
 	    glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 	    

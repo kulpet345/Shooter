@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/shooter.dir/objloader.cpp.o"
   "CMakeFiles/shooter.dir/bullet_geom.cpp.o"
   "CMakeFiles/shooter.dir/bullet.cpp.o"
+  "CMakeFiles/shooter.dir/geometry.cpp.o"
   "shooter.pdb"
   "shooter"
 )

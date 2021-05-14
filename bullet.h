@@ -18,6 +18,8 @@ namespace Bullets {
 	extern double speed;
 	extern GLuint TextureID;
 	extern unsigned int Texture;
+	extern double r;
+	extern std::vector<bool> exist;
 	
 	void LoadTexture(GLuint programID);
 	void LoadObject();
@@ -25,4 +27,6 @@ namespace Bullets {
 	void InsertModel(std::pair<glm::vec3, glm::vec3> camera);
 	void EraseModel(int idx);
 	void Draw();
+	void CreateExist();
+	void Clear();
 };

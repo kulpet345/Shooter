@@ -2,8 +2,9 @@
 #define GEOMETRY_H_
 
 #include <array>
+#include <cmath>
 
-struct Vec{
+struct Vec {
     float x, y, z;
     Vec operator + (const Vec & v)const{
         return Vec{x + v.x, y + v.y, z + v.z};
@@ -19,9 +20,16 @@ struct Vec{
         buf[1] = y;
         buf[2] = z;
     }
+    
+    float norm() const {
+		return sqrt(x * x + y * y + z * z);
+	}
 };
 
 using Tetrahedron = std::array<Vec, 4>;
+
+Vec get_center(const Tetrahedron& t);
+float get_radius(const Tetrahedron& t);
 
 struct Rotation{
     Vec base;

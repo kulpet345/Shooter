@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/kulpet345/Shooter/bullet.cpp
+/home/kulpet345/hw5/Shooter/bullet.cpp
 bullet.h
-/home/kulpet345/Shooter/bullet.h
+/home/kulpet345/hw5/Shooter/bullet.h
 stb_image.h
-/home/kulpet345/Shooter/stb_image.h
+/home/kulpet345/hw5/Shooter/stb_image.h
 
-/home/kulpet345/Shooter/bullet.h
+/home/kulpet345/hw5/Shooter/bullet.h
 chrono
 -
 glm/glm.hpp
@@ -20,27 +20,27 @@ glm/glm.hpp
 GL/glew.h
 -
 objloader.hpp
-/home/kulpet345/Shooter/objloader.hpp
+/home/kulpet345/hw5/Shooter/objloader.hpp
 bullet_geom.h
-/home/kulpet345/Shooter/bullet_geom.h
+/home/kulpet345/hw5/Shooter/bullet_geom.h
 iostream
 -
 vector
 -
 
-/home/kulpet345/Shooter/bullet_geom.cpp
+/home/kulpet345/hw5/Shooter/bullet_geom.cpp
 bullet_geom.h
-/home/kulpet345/Shooter/bullet_geom.h
+/home/kulpet345/hw5/Shooter/bullet_geom.h
 
-/home/kulpet345/Shooter/bullet_geom.h
+/home/kulpet345/hw5/Shooter/bullet_geom.h
 cmath
 -
 vector
 -
 
-/home/kulpet345/Shooter/camera.cpp
+/home/kulpet345/hw5/Shooter/camera.cpp
 camera.h
-/home/kulpet345/Shooter/camera.h
+/home/kulpet345/hw5/Shooter/camera.h
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -50,7 +50,7 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/kulpet345/Shooter/camera.h
+/home/kulpet345/hw5/Shooter/camera.h
 math.h
 -
 GL/glew.h
@@ -60,27 +60,31 @@ GLFW/glfw3.h
 glm/glm.hpp
 -
 
-/home/kulpet345/Shooter/enemy.cpp
+/home/kulpet345/hw5/Shooter/enemy.cpp
+bullet.h
+/home/kulpet345/hw5/Shooter/bullet.h
 gen.h
-/home/kulpet345/Shooter/gen.h
+/home/kulpet345/hw5/Shooter/gen.h
 enemy.h
-/home/kulpet345/Shooter/enemy.h
+/home/kulpet345/hw5/Shooter/enemy.h
+intersection.h
+/home/kulpet345/hw5/Shooter/intersection.h
 shader.hpp
-/home/kulpet345/Shooter/shader.hpp
+/home/kulpet345/hw5/Shooter/shader.hpp
 text2D.hpp
-/home/kulpet345/Shooter/text2D.hpp
+/home/kulpet345/hw5/Shooter/text2D.hpp
+algorithm
+-
 string.h
 -
 string
 -
-GL/glut.h
--
 
-/home/kulpet345/Shooter/enemy.h
+/home/kulpet345/hw5/Shooter/enemy.h
 gen.h
-/home/kulpet345/Shooter/gen.h
+/home/kulpet345/hw5/Shooter/gen.h
 random.h
-/home/kulpet345/Shooter/random.h
+/home/kulpet345/hw5/Shooter/random.h
 vector
 -
 GL/glew.h
@@ -92,11 +96,11 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/kulpet345/Shooter/gen.cpp
+/home/kulpet345/hw5/Shooter/gen.cpp
 gen.h
-/home/kulpet345/Shooter/gen.h
+/home/kulpet345/hw5/Shooter/gen.h
 random.h
-/home/kulpet345/Shooter/random.h
+/home/kulpet345/hw5/Shooter/random.h
 math.h
 -
 string.h
@@ -112,23 +116,45 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/kulpet345/Shooter/gen.h
+/home/kulpet345/hw5/Shooter/gen.h
 geometry.h
-/home/kulpet345/Shooter/geometry.h
+/home/kulpet345/hw5/Shooter/geometry.h
 
-/home/kulpet345/Shooter/geometry.h
-array
+/home/kulpet345/hw5/Shooter/geometry.cpp
+geometry.h
+/home/kulpet345/hw5/Shooter/geometry.h
+algorithm
 -
 
-/home/kulpet345/Shooter/main.cpp
+/home/kulpet345/hw5/Shooter/geometry.h
+array
+-
+cmath
+-
+
+/home/kulpet345/hw5/Shooter/intersection.h
+iostream
+-
+vector
+-
+cmath
+-
+geometry.h
+/home/kulpet345/hw5/Shooter/geometry.h
+bullet.h
+/home/kulpet345/hw5/Shooter/bullet.h
+enemy.h
+/home/kulpet345/hw5/Shooter/enemy.h
+
+/home/kulpet345/hw5/Shooter/main.cpp
 stdio.h
 -
 stdlib.h
 -
 bullet.h
-/home/kulpet345/Shooter/bullet.h
+/home/kulpet345/hw5/Shooter/bullet.h
 shader.hpp
-/home/kulpet345/Shooter/shader.hpp
+/home/kulpet345/hw5/Shooter/shader.hpp
 iostream
 -
 chrono
@@ -144,13 +170,13 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 camera.h
-/home/kulpet345/Shooter/camera.h
+/home/kulpet345/hw5/Shooter/camera.h
 enemy.h
-/home/kulpet345/Shooter/enemy.h
+/home/kulpet345/hw5/Shooter/enemy.h
 text2D.hpp
-/home/kulpet345/Shooter/text2D.hpp
+/home/kulpet345/hw5/Shooter/text2D.hpp
 
-/home/kulpet345/Shooter/objloader.cpp
+/home/kulpet345/hw5/Shooter/objloader.cpp
 vector
 -
 stdio.h
@@ -162,7 +188,7 @@ cstring
 glm/glm.hpp
 -
 objloader.hpp
-/home/kulpet345/Shooter/objloader.hpp
+/home/kulpet345/hw5/Shooter/objloader.hpp
 assimp/Importer.hpp
 -
 assimp/scene.h
@@ -170,7 +196,7 @@ assimp/scene.h
 assimp/postprocess.h
 -
 
-/home/kulpet345/Shooter/objloader.hpp
+/home/kulpet345/hw5/Shooter/objloader.hpp
 GL/glew.h
 -
 glm/glm.hpp
@@ -178,11 +204,11 @@ glm/glm.hpp
 vector
 -
 
-/home/kulpet345/Shooter/random.h
+/home/kulpet345/hw5/Shooter/random.h
 random
 -
 
-/home/kulpet345/Shooter/shader.cpp
+/home/kulpet345/hw5/Shooter/shader.cpp
 stdio.h
 -
 string
@@ -204,15 +230,15 @@ string.h
 GL/glew.h
 -
 shader.hpp
-/home/kulpet345/Shooter/shader.hpp
+/home/kulpet345/hw5/Shooter/shader.hpp
 
-/home/kulpet345/Shooter/shader.hpp
+/home/kulpet345/hw5/Shooter/shader.hpp
 GL/glew.h
 -
 
-/home/kulpet345/Shooter/stb_image.h
+/home/kulpet345/hw5/Shooter/stb_image.h
 stb_image.h
-/home/kulpet345/Shooter/stb_image.h
+/home/kulpet345/hw5/Shooter/stb_image.h
 stdio.h
 -
 stdlib.h
@@ -242,7 +268,7 @@ intrin.h
 arm_neon.h
 -
 
-/home/kulpet345/Shooter/text2D.cpp
+/home/kulpet345/hw5/Shooter/text2D.cpp
 vector
 -
 cstring
@@ -254,15 +280,15 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 shader.hpp
-/home/kulpet345/Shooter/shader.hpp
+/home/kulpet345/hw5/Shooter/shader.hpp
 texture.hpp
-/home/kulpet345/Shooter/texture.hpp
+/home/kulpet345/hw5/Shooter/texture.hpp
 text2D.hpp
-/home/kulpet345/Shooter/text2D.hpp
+/home/kulpet345/hw5/Shooter/text2D.hpp
 
-/home/kulpet345/Shooter/text2D.hpp
+/home/kulpet345/hw5/Shooter/text2D.hpp
 
-/home/kulpet345/Shooter/texture.cpp
+/home/kulpet345/hw5/Shooter/texture.cpp
 stdio.h
 -
 stdlib.h
@@ -274,5 +300,5 @@ GL/glew.h
 GLFW/glfw3.h
 -
 
-/home/kulpet345/Shooter/texture.hpp
+/home/kulpet345/hw5/Shooter/texture.hpp
 

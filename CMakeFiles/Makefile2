@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kulpet345/Shooter
+CMAKE_SOURCE_DIR = /home/kulpet345/hw5/Shooter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kulpet345/Shooter
+CMAKE_BINARY_DIR = /home/kulpet345/hw5/Shooter
 
 #=============================================================================
 # Target rules for target CMakeFiles/shooter.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/kulpet345/Shooter
 CMakeFiles/shooter.dir/all:
 	$(MAKE) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/depend
 	$(MAKE) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kulpet345/Shooter/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target shooter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kulpet345/hw5/Shooter/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target shooter"
 .PHONY : CMakeFiles/shooter.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/shooter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/shooter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/Shooter/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/hw5/Shooter/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/shooter.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/Shooter/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kulpet345/hw5/Shooter/CMakeFiles 0
 .PHONY : CMakeFiles/shooter.dir/rule
 
 # Convenience name for target.

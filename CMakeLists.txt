@@ -27,6 +27,7 @@ add_executable(shooter
     bullet_geom.cpp
     bullet.cpp
     stb_image.h
+    geometry.cpp
 
     enemy.vertexshader
     enemy.fragmentshader    

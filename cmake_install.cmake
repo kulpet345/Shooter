@@ -1,4 +1,4 @@
-# Install script for directory: /home/kulpet345/Shooter
+# Install script for directory: /home/kulpet345/hw5/Shooter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kulpet345/Shooter/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kulpet345/hw5/Shooter/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
