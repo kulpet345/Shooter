@@ -1,3 +1,0 @@
-/home/kulpet345/hw5/Shooter/CMakeFiles/rebuild_cache.dir
-/home/kulpet345/hw5/Shooter/CMakeFiles/shooter.dir
-/home/kulpet345/hw5/Shooter/CMakeFiles/edit_cache.dir
