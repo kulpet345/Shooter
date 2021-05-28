@@ -2,6 +2,6 @@
 #define SCENERY_H_
 
 void drawScenery();
-void initScenery();
+void initScenery(unsigned int);
 
 #endif // SCENERY_H_

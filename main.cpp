@@ -94,7 +94,7 @@ int main(int argc, char ** argv)
 	Bullets::LoadTexture(programID);
 	Bullets::LoadObject();
 	Bullets::speed = 0.001;
-	initScenery();
+	initScenery(programID);
 
 	auto start = std::chrono::high_resolution_clock::now();
 	
@@ -127,11 +127,11 @@ int main(int argc, char ** argv)
         
         glUseProgram(programID);
 
+        drawScenery();        
         
         auto finish = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> elapsed = finish - start;
         
-        drawScenery();        
         Bullets::UpdateModels(elapsed);
         
         glfwSetKeyCallback(window, key_callback);
