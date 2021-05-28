@@ -1,4 +1,5 @@
 #include "bullet.h"
+#include "speed.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
@@ -173,9 +174,9 @@ void Bullets::LoadObject() {
 void Bullets::UpdateModels(std::chrono::duration<double> elapsed) {
 	for (int j = 0; j < models.size(); ++j) {
 		for (int i = 0; i < models[j].size(); ++i) {
-			models[j][i].x += elapsed.count() * speed * sp[j].x;
-			models[j][i].y += elapsed.count() * speed * sp[j].y;
-			models[j][i].z += elapsed.count() * speed * sp[j].z;
+			models[j][i].x += elapsed.count() * getSpeed(speed) * sp[j].x;
+			models[j][i].y += elapsed.count() * getSpeed(speed) * sp[j].y;
+			models[j][i].z += elapsed.count() * getSpeed(speed) * sp[j].z;
 		}
 	}
 }

@@ -1,4 +1,5 @@
 #include "camera.h"
+#include "speed.h"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -24,26 +25,26 @@ void recalcCamera(GLFWwindow * window){
     double deltaTime = currTime - View::lastTime;
     View::lastTime = currTime;
     if(glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS){
-        View::angle += deltaTime * rSpeed;
+        View::angle += deltaTime * getSpeed(rSpeed);
         View::clamp_angle();
     }
     if(glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS){
-        View::angle -= deltaTime * rSpeed;
+        View::angle -= deltaTime * getSpeed(rSpeed);
         View::clamp_angle();
     }
     if(glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS){
-        View::y -= deltaTime * vSpeed;
+        View::y -= deltaTime * getSpeed(vSpeed);
     }
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS){
-        View::y += deltaTime * vSpeed;
+        View::y += deltaTime * getSpeed(vSpeed);
     }
     if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS){
-        View::x -= cos(View::angle) * deltaTime * hSpeed;
-        View::z -= sin(View::angle) * deltaTime * hSpeed;
+        View::x -= cos(View::angle) * deltaTime * getSpeed(hSpeed);
+        View::z -= sin(View::angle) * deltaTime * getSpeed(hSpeed);
     }
     if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS){
-        View::x += cos(View::angle) * deltaTime * hSpeed;
-        View::z += sin(View::angle) * deltaTime * hSpeed;
+        View::x += cos(View::angle) * deltaTime * getSpeed(hSpeed);
+        View::z += sin(View::angle) * deltaTime * getSpeed(hSpeed);
     }
 }
 

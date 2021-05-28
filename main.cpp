@@ -23,6 +23,7 @@ using namespace glm;
 #include "camera.h"
 #include "enemy.h"
 #include "text2D.hpp"
+#include "speed.h"
 
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -34,6 +35,9 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         std::pair<glm::vec3, glm::vec3> camera{pos, dir};
 		Bullets::InsertModel(camera);
 	}
+    if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
+        slowMotion();
+    }
 }
 
 int main(int argc, char ** argv)
