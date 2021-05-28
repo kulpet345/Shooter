@@ -53,7 +53,7 @@ void EnemyBuffer::draw(glm::mat4 camera) {
     }
 
     std::string msg = "Killed: " + std::to_string(killed_);
-    printText2D(msg.c_str(), 0, 0, 20);
+    printText2D(msg.c_str(), 0, 950, 40);
 }
 
 void EnemyBuffer::create_enemy(){

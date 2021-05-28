@@ -14,7 +14,7 @@ add_definitions(
 	-DGLEW_STATIC
 	-D_CRT_SECURE_NO_WARNINGS
 )
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g3")
 add_executable(shooter
     main.cpp
     shader.cpp
@@ -29,6 +29,7 @@ add_executable(shooter
     stb_image.h
     geometry.cpp
     speed.cpp
+    scenery.cpp
 
     enemy.vertexshader
     enemy.fragmentshader    

@@ -23,6 +23,7 @@ using namespace glm;
 #include "camera.h"
 #include "enemy.h"
 #include "text2D.hpp"
+#include "scenery.h"
 #include "speed.h"
 
 
@@ -93,7 +94,8 @@ int main(int argc, char ** argv)
 	Bullets::LoadTexture(programID);
 	Bullets::LoadObject();
 	Bullets::speed = 0.001;
-	
+	initScenery();
+
 	auto start = std::chrono::high_resolution_clock::now();
 	
     initText2D("Holstein.DDS");
@@ -129,7 +131,7 @@ int main(int argc, char ** argv)
         auto finish = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> elapsed = finish - start;
         
-        
+        drawScenery();        
         Bullets::UpdateModels(elapsed);
         
         glfwSetKeyCallback(window, key_callback);
