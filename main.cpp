@@ -123,11 +123,11 @@ int main(int argc, char ** argv)
         EnemyBuffer::check_kills();
         Bullets::Clear();
 
+        drawScenery();        
         EnemyBuffer::draw(MVP);
         
         glUseProgram(programID);
 
-        drawScenery();        
         
         auto finish = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> elapsed = finish - start;
