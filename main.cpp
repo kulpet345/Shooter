@@ -39,6 +39,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
         slowMotion();
     }
+    if (key == GLFW_KEY_R && action == GLFW_PRESS) {
+        Bullets::IncreaseResolution();
+    }
+    if (key == GLFW_KEY_V && action == GLFW_PRESS) {
+        Bullets::DecreaseResolution();
+    }
 }
 
 int main(int argc, char ** argv)
@@ -92,7 +98,7 @@ int main(int argc, char ** argv)
 	GLuint MatrixID = glGetUniformLocation(programID, "MVP");
 	
 	Bullets::LoadTexture(programID);
-	Bullets::LoadObject();
+	//Bullets::LoadObject();
 	Bullets::speed = 0.001;
 	initScenery(programID);
 
